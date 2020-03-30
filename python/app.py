@@ -1,3 +1,5 @@
-int x;
+import requests
 
-vars()
+data = requests.get(url='https://cat-fact.herokuapp.com/facts/random').json()
+
+print(data['text'])
