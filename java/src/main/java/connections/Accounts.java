@@ -8,7 +8,7 @@ import java.net.URL;
 public class Accounts {
     public String getUsers() {
 
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
         int status;
 
         try {
