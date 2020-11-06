@@ -12,7 +12,7 @@ produces:
 paths:
   /:
     get:
-      operationId: app.welcome
+      operationId: api.main.welcome
       tags:
         - swagger
       summary: Retrieves welcome message
