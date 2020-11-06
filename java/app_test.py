@@ -23,7 +23,7 @@ def helper(json_info):
 
 def test_tc0001_welcome(client):
     """Tests API welcome message"""
-    td_message = "{'message': 'Hello, welcome to flask api'}"
+    td_message = "{'message': 'Hello, welcome to the flask api'}"
     client_response = client.get('/')
     json_info = helper(client_response.response)
     assert client_response.status_code == 200
