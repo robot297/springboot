@@ -1,1 +1,3 @@
-java/.idea/
+.idea/
+venv/
+.pytest_cache/
