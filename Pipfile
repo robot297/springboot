@@ -8,6 +8,7 @@ flask = "*"
 connexion = "*"
 swagger-ui-bundle = "*"
 pytest = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 pylint = "*"
