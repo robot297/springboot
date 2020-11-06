@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  description: This is the swagger spec for the flask API
+  version: "1.0.0"
+  title: Flask-API
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+paths:
+  /:
+    get:
+      operationId: app.welcome
+      tags:
+        - swagger
+      summary: Retrieves welcome message
+      description: Displays welcome message
+      responses:
+        200:
+          description: See a welcome message
