@@ -8,6 +8,17 @@ class User(db.Model):
     username = db.Column(db.String(80), primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
+    def json(self):
+        """Returns a data dictionary"""
+        return {
+            'username': self.username,
+            'email': self.email
+        }
+
+    @staticmethod
+    def get_all_users():
+        return [User.json(user) for user in User.query.all()]
+
     @staticmethod
     def add_user(_username, _email):
         """Function adds a user to a db table."""
