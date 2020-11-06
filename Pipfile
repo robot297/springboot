@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 flask = "*"
+connexion = "*"
+swagger-ui-bundle = "*"
 
 [dev-packages]
 pylint = "*"
