@@ -1,11 +1,14 @@
-from flask import Flask
+"""Entry point for our API"""
+from flask import Flask, Response
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World'
+def welcome():
+    response_text = '{ "message": "Hello, welcome to the flask api" }'
+    response = Response(response_text, 200, mimetype='application/json')
+    return response
 
 
 if __name__ == '__main__':
