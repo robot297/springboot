@@ -20,3 +20,14 @@ paths:
       responses:
         200:
           description: See a welcome message
+
+  /health:
+    get:
+      operationId: api.main.health
+      tags:
+        - health
+      summary: Retrieves health status of this application
+      description: Perform health check on Flask API
+      responses:
+        200:
+          description: Application is running normally

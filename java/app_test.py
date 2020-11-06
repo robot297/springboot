@@ -31,3 +31,15 @@ def test_tc0001_welcome(client):
         print(f'FAIL: Not able to find td {td_message}')
         print(f'Actual Response: {json_info}')
         assert False
+
+
+def test_tc0002_health(client):
+    """Tests health endpoint"""
+    td_message = "{'status': 'OK'}"
+    client_response = client.get('/health')
+    json_info = helper(client_response.response)
+    assert client_response.status_code == 200
+    if td_message != json_info:
+        print(f'FAIL: Not able to find td {td_message}')
+        print(f'Actual Response: {json_info}')
+        assert False
