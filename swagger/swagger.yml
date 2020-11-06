@@ -14,7 +14,7 @@ paths:
     get:
       operationId: api.main.welcome
       tags:
-        - swagger
+        - welcome
       summary: Retrieves welcome message
       description: Displays welcome message
       responses:
@@ -31,3 +31,14 @@ paths:
       responses:
         200:
           description: Application is running normally
+
+  /users/v1:
+    get:
+      operationId: api.users.get_users
+      tags:
+        - users
+      summary: Retrieves all users
+      description: Displays all users
+      responses:
+        200:
+          description: See all users
