@@ -17,7 +17,14 @@ class User(db.Model):
 
     @staticmethod
     def get_all_users():
+        """Gets all users"""
         return [User.json(user) for user in User.query.all()]
+
+    @staticmethod
+    def get_user(_username):
+        """Gets a single user"""
+        query = User.query.filter_by(username=_username).first()
+        return query
 
     @staticmethod
     def add_user(_username, _email):
