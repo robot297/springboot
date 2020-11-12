@@ -42,3 +42,30 @@ paths:
       responses:
         200:
           description: See all users
+
+  /users/v1/{username}:
+    get:
+      operationId: api.users.get_by_username
+      tags:
+        - users
+      summary: Retrieves an individual user
+      description: Displays user by username
+      parameters:
+        - name: username
+          in: path
+          description: retrieve username data
+          type: string
+          required: true
+      responses:
+        200:
+          description: Successfully displays user info
+          schema:
+            type: array
+            items:
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+        404:
+          description: User not found
