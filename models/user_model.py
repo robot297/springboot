@@ -1,5 +1,6 @@
 """Model for users and database methods"""
 from db_config import db
+import json
 
 
 class User(db.Model):
@@ -39,3 +40,11 @@ class User(db.Model):
         User.add_user("darth", "darth.vader@gmail.com")
         User.add_user("superman", "super.man@gmail.com")
         User.add_user("thor", "thor@gmail.com")
+
+    def __repr__(self):
+        """Printable representation of our Model"""
+        user_object = {
+            'username': self.username,
+            'email': self.email
+        }
+        return json.dumps(user_object)
