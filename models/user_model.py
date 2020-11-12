@@ -1,5 +1,6 @@
 """Model for users and database methods"""
 from db_config import db
+import json
 
 
 class User(db.Model):
@@ -17,7 +18,14 @@ class User(db.Model):
 
     @staticmethod
     def get_all_users():
+        """Gets all users"""
         return [User.json(user) for user in User.query.all()]
+
+    @staticmethod
+    def get_user(_username):
+        """Gets a single user"""
+        query = User.query.filter_by(username=_username).first()
+        return query
 
     @staticmethod
     def add_user(_username, _email):
@@ -32,3 +40,11 @@ class User(db.Model):
         User.add_user("darth", "darth.vader@gmail.com")
         User.add_user("superman", "super.man@gmail.com")
         User.add_user("thor", "thor@gmail.com")
+
+    def __repr__(self):
+        """Printable representation of our Model"""
+        user_object = {
+            'username': self.username,
+            'email': self.email
+        }
+        return json.dumps(user_object)
