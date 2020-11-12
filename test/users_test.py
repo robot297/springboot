@@ -30,12 +30,24 @@ def helper(json_info):
 
 
 def test_tc0001_get(client):
-    """Test to check if a single user can be retrieved from the db."""
+    """Test to check if users can be retrieved from the db."""
     td_user = 'thor'
     response = client.get('/users/v1')
     json_info = helper(response.response)
     assert response.status_code == 200
     if td_user not in json_info:
         print(f"FAIL: Not able to find {td_user}")
+        print(f"Actual response: {json_info}")
+        assert False
+
+
+def test_tc0002_get_by_username(client):
+    """Test checks if you can get a single user from the API."""
+    td_username = 'superman'
+    response = client.get(f'/users/v1/{td_username}')
+    json_info = helper(response.response)
+    assert response.status_code == 200
+    if td_username not in json_info:
+        print(f"FAIL: Not able to find {td_username}")
         print(f"Actual response: {json_info}")
         assert False
