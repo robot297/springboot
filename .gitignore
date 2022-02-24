@@ -1,3 +1,14 @@
-.idea/
+# IDE Info
+
 venv/
-.pytest_cache/
+.vscode/
+.idea/
+
+# Python Junk
+__pycache__/
+
+# Dist
+
+*.egg-info/
+build/
+dist/
