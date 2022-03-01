@@ -1,15 +1,8 @@
-# IDE Info
-
-venv/
-.vscode/
 .idea/
+.vscode/
 
-# Python Junk
-__pycache__/
+env/
+venv/
+
 .pytest_cache/
-
-# Dist
-
-*.egg-info/
-build/
-dist/
+__pycache__/
