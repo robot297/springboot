@@ -1,9 +1,12 @@
 """Basic API functions"""
 from flask import Response
+from flask_caching import Cache
 from config import my_app
 from db_config import db
 from models.user_model import User
 
+
+cache = Cache(my_app.app)
 
 @my_app.route('/dbsetup')
 def create_db():
@@ -16,6 +19,7 @@ def create_db():
     return response
 
 
+@cache.cached(timeout=60)
 def welcome():
     """Welcome method for API"""
     response_text = '{ "message": "Hello, welcome to the flask api" }'
