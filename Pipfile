@@ -10,6 +10,8 @@ swagger-ui-bundle = "*"
 pytest = "*"
 flask-sqlalchemy = "*"
 flask-caching = "*"
+wheel = "*"
+gunicorn = "*"
 
 [dev-packages]
 pylint = "*"
