@@ -3,10 +3,10 @@
 venv/
 .vscode/
 .idea/
+.git/
 
 # Python Junk
 __pycache__/
-.pytest_cache/
 
 # Dist
 
