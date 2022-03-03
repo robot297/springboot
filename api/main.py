@@ -1,4 +1,5 @@
 """Basic API functions"""
+import logging
 from flask import Response
 from flask_caching import Cache
 from config import my_app
@@ -6,6 +7,7 @@ from db_config import db
 from models.user_model import User
 
 
+logger = logging.getLogger(__name__)
 cache = Cache(my_app.app)
 
 @my_app.route('/dbsetup')
@@ -24,6 +26,7 @@ def welcome():
     """Welcome method for API"""
     response_text = '{ "message": "Hello, welcome to the flask api" }'
     response = Response(response_text, 200, mimetype='application/json')
+    logger.info('Hellloooooo')
     return response
 
 

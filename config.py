@@ -1,8 +1,10 @@
 """Configuration for Flask API"""
+import logging
 import os
 import connexion
 from flask_caching import Cache
 
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s')
 my_app = connexion.App(__name__, specification_dir='./swagger')
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(my_app.root_path, 'database/database.db')
